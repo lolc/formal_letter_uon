@@ -1,0 +1,92 @@
+% ==========
+% Author: Lawrence Ong
+% Date: 2021-06-28
+% Description: This generates the official letter of the University of Newcastle
+% ==========
+
+\documentclass[11pt]{article}
+\usepackage[utf8]{inputenc}
+
+\newcommand{\mygap}{\hspace{1em}}
+\usepackage[dayofweek]{datetime}
+\usepackage{graphicx}
+\usepackage{lastpage}
+\usepackage{geometry}
+\geometry{
+a4paper,
+portrait,
+headheight=0mm,
+left=35mm,
+right=18mm,
+top=18mm,
+headsep=0mm,
+footskip=0mm,
+footnotesep=0mm,
+bottom=30mm,
+}
+
+\usepackage{fancyhdr}
+\fancypagestyle{firstpage}
+{
+\fancyhf{}
+\lfoot{\vspace*{-1.3ex}\includegraphics[height=29mm]{foot.pdf}
+}
+}
+\pagestyle{fancy}
+\renewcommand{\headrulewidth}{0pt} % no horizontal line
+\cfoot{\vspace*{2.5em}Page \thepage~of \pageref{LastPage}}
+
+\usepackage{helvet}
+\renewcommand{\familydefault}{\sfdefault}
+
+\usepackage{lipsum} 
+
+\setlength\parindent{0pt} % no indent
+\setlength\parskip{1em plus 0.1em minus 0.2em} % space between paragraphs
+
+\begin{document}
+\thispagestyle{firstpage} % Header and foot only on the first page
+
+\hfill \includegraphics[height=32mm,width=32mm]{uon_logo_white_square_tighter.pdf}\\
+% ========== DATE: Friday 27 April 2020 ==========
+\today{}
+% ==============================
+
+\vspace{1.1em}
+
+% ========== RECIPIENT ==========
+Professor XXX\\
+% ========== POSITION ==========
+Head of School\\
+% ========== ADDRESS ==========
+Address 1\\
+Address 2\\
+Address 3
+% ==============================
+
+\vspace{2em}
+
+Dear professor,
+
+% ========== TITLE ==========
+\textbf{Title}
+% ==============================
+
+% ========== CONTENT ==========
+Landscape in legal paper and a 2 inches margin
+\lipsum[2-15]
+
+
+% ========== SIGNATURE ==========
+\vspace{3em}
+Yours sincerely,\\
+\includegraphics[height=2cm]{signature.pdf}\\
+\textbf{Lawrence Ong}\\
+Associate Professor\\
+College of Engineering, Science and Environment
+
+T: +61 2 49215385\\
+E: Lawrence.Ong@newcastle.edu.au
+% ==============================
+
+\end{document}
